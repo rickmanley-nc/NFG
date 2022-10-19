@@ -11461,7 +11461,7 @@ header.masthead .masthead-heading {
 }
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
   display: flex;
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   background: rgba(255, 204, 255, 0.8);
