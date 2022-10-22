@@ -1,5 +1,5 @@
 # Sesame Ginger Salad Dressing
-![pic](../../docs/assets/images/**.png)
+![pic](assets/img/portfolio/sesame-ginger-salad-dressing.jpeg)
 
 ### Ingredients
 * 2 tablespoons sesame oil
