@@ -1,15 +1,17 @@
 ---
+##############################
+## HTML Generator Variables ##
+##############################
+
 ## Modal ##
 modal.category = none
 
 
-
-
-## Recipes ##
+## Recipe ##
 recipe.title = none
-recipe.sub = none
+recipe.subtitle = none
 recipe.img-portfolio = ##!! 600 x 450 for 3x4 columns !!##
-recipe.img-portfolio-modal = ##!  !!##
+recipe.img-modal = ##!  !!##
 recipe.ingredients.category.1 = none
 recipe.ingredients.category.2 = none
 recipe.steps = none
