@@ -15,5 +15,4 @@ recipe.img-modal = ##!  !!##
 recipe.ingredients.category.1 = none
 recipe.ingredients.category.2 = none
 recipe.steps = none
-
-## Ingredients
+recipe.credit = none
