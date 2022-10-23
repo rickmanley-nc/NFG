@@ -1,11 +1,17 @@
 ---
+## Modal ##
+modal.category = none
+
+
+
+
 ## Recipes ##
-recipe.title = 
-recipe.sub = 
+recipe.title = none
+recipe.sub = none
 recipe.img-portfolio = ##!! 600 x 450 for 3x4 columns !!##
 recipe.img-portfolio-modal = ##!  !!##
-recipe.ingredients.category.1 = 
-recipe.ingredients.category.2 = 
-recipe.steps = 
+recipe.ingredients.category.1 = none
+recipe.ingredients.category.2 = none
+recipe.steps = none
 
 ## Ingredients
