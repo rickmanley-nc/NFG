@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script>
+            function includeHTML() {
+                var z, i, elmnt, file, xhttp;
+                z = document.getElementsByTagName("*");
+                for (i = 0; i < z.length; i++) {
+                    elmnt = z[i];
+                    file = elmnt.getAttribute("w3-include-html");
+                    if (file) {
+                        xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4) {
+                                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                                /* Remove the attribute, and call this function once more: */
+                                elmnt.removeAttribute("w3-include-html");
+                                includeHTML();
+                            }
+                        }
+                        xhttp.open("GET", file, true);
+                        xhttp.send();
+                        return;
+                    }
+                }
+            }
+        </script>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -504,43 +529,8 @@
         <!-- Modal - Cocktails and Mocktails item 1 modal popup-->
         <div class="portfolio-modal modal fade bg-secondary bg-gradient" id="cocktailsModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Gold Rush</h2>
-                                    <p class="item-intro text-muted">Four Roses, Knob Creek, Bulleit</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/goldrush.jpg" alt="..." />
-                                    <h3 style="text-align:left">Honey Syrup</h3>
-                                    <ul style="text-align:left">
-                                        <li>1/4 cup honey</li>
-                                        <li>1/4 cup water</li>
-                                    </ul>
-                                    <h3 style="text-align:left">Cocktail</h3>
-                                    <ul style="text-align:left">
-                                        <li>2 ounces bourbon</li>
-                                        <li>3/4 ounce lemon juice</li>
-                                        <li>1/2 ounce honey syrup</li>
-                                        <li>Lemon peel/slice for garnish</li>
-                                    </ul>
-                                    <h3 style="text-align:left">Steps</h3>
-                                    <ol style="text-align:left">
-                                        <li>Make honey syrup</li>
-                                        <li>Fill a cocktail shaker with ice. Add bourbon, lemon juice, and honey syrup. Cover and shake vigorously, about 15 seconds.</li>
-                                        <li>Strain into an ice-filled rocks glass and garnish with a lemon twist.</li>
-                                        </ol>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Back
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- the include file -->
+                <div w3-include-html="goldrush.html"></div>
             </div>
         </div>
         <!-- Modal - Appetizers and Sides item 1 modal popup-->
@@ -1130,6 +1120,8 @@
                 </div>
             </div>
         </div>
+        <!-- Include w3-include-html -->
+        <script>includeHTML();</script> 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
