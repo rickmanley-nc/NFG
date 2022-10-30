@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script>
+            function includeHTML() {
+                var z, i, elmnt, file, xhttp;
+                z = document.getElementsByTagName("*");
+                for (i = 0; i < z.length; i++) {
+                    elmnt = z[i];
+                    file = elmnt.getAttribute("w3-include-html");
+                    if (file) {
+                        xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4) {
+                                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                                /* Remove the attribute, and call this function once more: */
+                                elmnt.removeAttribute("w3-include-html");
+                                includeHTML();
+                            }
+                        }
+                        xhttp.open("GET", file, true);
+                        xhttp.send();
+                        return;
+                    }
+                }
+            }
+        </script>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -504,93 +529,15 @@
         <!-- Modal - Cocktails and Mocktails item 1 modal popup-->
         <div class="portfolio-modal modal fade bg-secondary bg-gradient" id="cocktailsModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Gold Rush</h2>
-                                    <p class="item-intro text-muted">Four Roses, Knob Creek, Bulleit</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/goldrush.jpg" alt="..." />
-                                    <h3 style="text-align:left">Honey Syrup</h3>
-                                    <ul style="text-align:left">
-                                        <li>1/4 cup honey</li>
-                                        <li>1/4 cup water</li>
-                                    </ul>
-                                    <h3 style="text-align:left">Cocktail</h3>
-                                    <ul style="text-align:left">
-                                        <li>2 ounces bourbon</li>
-                                        <li>3/4 ounce lemon juice</li>
-                                        <li>1/2 ounce honey syrup</li>
-                                        <li>Lemon peel/slice for garnish</li>
-                                    </ul>
-                                    <h3 style="text-align:left">Steps</h3>
-                                    <ol style="text-align:left">
-                                        <li>Make honey syrup</li>
-                                        <li>Fill a cocktail shaker with ice. Add bourbon, lemon juice, and honey syrup. Cover and shake vigorously, about 15 seconds.</li>
-                                        <li>Strain into an ice-filled rocks glass and garnish with a lemon twist.</li>
-                                        </ol>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Back
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- the include file -->
+                <div w3-include-html="recipes/1_cocktails_and_mocktails/goldrush.html"></div>
             </div>
         </div>
         <!-- Modal - Appetizers and Sides item 1 modal popup-->
         <div class="portfolio-modal modal fade" id="appsModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Cranberry Brie Bites</h2>
-                                    <p class="item-intro text-muted">or choose from other combinations in Alternatives</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/cranberry-brie-bites-fixed.jpg" alt="..." />
-                                    <h3 style="text-align:left">Ingredients</h3>
-                                    <ul style="text-align:left">
-                                        <li>Cooking spray, for pan</li>
-                                        <li>1 (8-oz.) tube crescent dough</li>
-                                        <li>1 (8-oz.) wheel of brie</li>
-                                        <li>1/2 cup whole berry cranberry sauce</li>
-                                        <li>1/4 cup chopped pecans</li>
-                                        <li>6 sprigs of rosemary, cut into 1&quot; pieces.</li>
-                                        </ul>
-                                    <h3 style="text-align:left">Steps</h3>
-                                    <ol style="text-align:left">
-                                        <li>Preheat oven to 375°</li>
-                                        <li>Grease a mini muffin tin with cooking spray. Roll out crescent dough, and pinch together seams. Cut into 24 squares. Place squares into muffin tin slots.</li>
-                                        <li>Cut brie into small pieces and place inside the crescent dough. Top with a spoonful of cranberry sauce, chopped pecans, and one little sprig of rosemary.</li>
-                                        <li>Bake until the crescent pastry is golden, about 15 minutes.</li>
-                                        </ol>
-                                    <h4 style="text-align:left">Alternatives</h4>
-                                    <ul style="text-align:left">
-                                        <li>Crumbled goat cheese + apricot preserves + toasted marcona almonds + thyme</li>
-                                        <li>Camembert + cherry preserves + crumbled bacon + black pepper</li>
-                                        <li>Gorgonzola + fig chutney + mint + toasted walnuts</li>
-                                        </ul>
-                                    <h5 style="text-align:left">Credit:</h5>
-                                    <p style="text-align:left">
-                                        <a href="https://www.delish.com/cooking/recipe-ideas/recipes/a56610/cranberry-brie-bites-recipe/" target="_blank" rel="noopener noreferrer">Delish</a>
-                                        </p>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Back
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- the include file -->
+                <div w3-include-html="recipes/2_appetizers_and_sides/cranberry-brie-bites/cranberry-brie-bites.html"></div>
             </div>
         </div>
         <!-- Modal - Soups item 1 modal popup-->
@@ -1130,6 +1077,8 @@
                 </div>
             </div>
         </div>
+        <!-- Include w3-include-html -->
+        <script>includeHTML();</script> 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
