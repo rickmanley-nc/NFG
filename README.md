@@ -1,5 +1,7 @@
 # NFG
-
+Meatballs
+Shrimp Scampi
+Beef Wellington
 
 
 ## Create new recipe
