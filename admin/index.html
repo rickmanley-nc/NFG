@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Admin Interface</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .preview { background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin-top: 20px; }
+        .ingredient-group { border: 1px solid #dee2e6; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+        .ingredient-row { margin-bottom: 10px; }
+        .step-group { border: 1px solid #dee2e6; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+        #renderedPreview { background: white; padding: 20px; border-radius: 5px; border: 1px solid #dee2e6; }
+        #markdownPreview { white-space: pre-wrap; word-wrap: break-word; }
+        #renderedPreview h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        #renderedPreview h2 { font-size: 2rem; margin-top: 2rem; margin-bottom: 1rem; }
+        #renderedPreview h3 { font-size: 1.5rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        #renderedPreview ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        #renderedPreview ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+        #renderedPreview li { margin-bottom: 0.5rem; }
+        #renderedPreview em { color: #666; }
+        #renderedPreview img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 8px; 
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Recipe Admin Interface</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn-group mb-3" role="group">
+                    <button type="button" class="btn btn-primary" id="newRecipeBtn">New Recipe</button>
+                    <button type="button" class="btn btn-secondary" id="editRecipeBtn" data-bs-toggle="modal" data-bs-target="#recipeSelectModal">Edit Existing</button>
+                </div>
+            </div>
+        </div>
+        
+        <form id="recipeForm" class="needs-validation" novalidate>
+            <!-- Basic Information -->
+            <div class="card mb-3">
+                <div class="card-header">Basic Information</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="subtitle" class="form-label">Subtitle</label>
+                            <input type="text" class="form-control" id="subtitle">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="category" class="form-label">Category</label>
+                            <select class="form-select" id="category" required>
+                                <option value="">Choose...</option>
+                                <option value="starters">Starters</option>
+                                <option value="mains">Mains</option>
+                                <option value="desserts">Desserts</option>
+                                <option value="cocktails">Cocktails</option>
+                                <option value="miscellaneous">Miscellaneous</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="prepTime" class="form-label">Prep Time</label>
+                            <input type="text" class="form-control" id="prepTime" placeholder="e.g., 20 minutes">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="cookTime" class="form-label">Cook Time</label>
+                            <input type="text" class="form-control" id="cookTime" placeholder="e.g., 1 hour">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="servings" class="form-label">Servings</label>
+                            <input type="text" class="form-control" id="servings" placeholder="e.g., 4-6">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="image" class="form-label">Image</label>
+                            <input type="file" class="form-control" id="image" accept="image/*">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ingredients -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    Ingredients
+                    <button type="button" class="btn btn-sm btn-outline-primary float-end" id="addIngredientGroup">
+                        Add Group
+                    </button>
+                </div>
+                <div class="card-body" id="ingredientGroups">
+                    <!-- Ingredient groups will be added here -->
+                </div>
+            </div>
+
+            <!-- Instructions -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    Instructions
+                    <button type="button" class="btn btn-sm btn-outline-primary float-end" id="addStepGroup">
+                        Add Group
+                    </button>
+                </div>
+                <div class="card-body" id="stepGroups">
+                    <!-- Step groups will be added here -->
+                </div>
+            </div>
+
+            <!-- Notes and Credits -->
+            <div class="card mb-3">
+                <div class="card-header">Additional Information</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="notes" class="form-label">Notes</label>
+                        <textarea class="form-control" id="notes" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="credit" class="form-label">Credit</label>
+                        <input type="text" class="form-control" id="credit" placeholder="Source URL or credit">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Save Recipe</button>
+                    <button type="button" class="btn btn-secondary" id="previewBtn" data-bs-toggle="modal" data-bs-target="#previewModal">Preview</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Recipe Selection Modal -->
+        <div class="modal fade" id="recipeSelectModal" tabindex="-1" aria-labelledby="recipeSelectModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="recipeSelectModalLabel">Select Recipe to Edit</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="recipeSearch" placeholder="Search recipes...">
+                        </div>
+                        <div class="list-group" id="recipeList">
+                            <!-- Recipes will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Modal -->
+        <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="previewModalLabel">Recipe Preview</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="nav nav-tabs" id="previewTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="rendered-tab" data-bs-toggle="tab" data-bs-target="#rendered" type="button" role="tab">Rendered Preview</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="markdown-tab" data-bs-toggle="tab" data-bs-target="#markdown" type="button" role="tab">Markdown</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-3" id="previewTabsContent">
+                            <div class="tab-pane fade show active" id="rendered" role="tabpanel">
+                                <div id="renderedPreview"></div>
+                            </div>
+                            <div class="tab-pane fade" id="markdown" role="tabpanel">
+                                <div class="preview">
+                                    <pre><code id="markdownPreview"></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/recipe-form.js"></script>
+</body>
+</html>

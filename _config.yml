@@ -1,0 +1,23 @@
+title: Nelson Farm and Grill
+description: Family recipes and cooking adventures
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Collections
+collections:
+  recipes:
+    output: true
+    permalink: /recipes/:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "recipes"
+    values:
+      layout: "recipe"

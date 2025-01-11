@@ -1,0 +1,61 @@
+<div class="modal-content">
+    <div class="close-modal" data-bs-dismiss="modal">
+        <img src="{{ '/assets/img/close-icon.svg' | relative_url }}" alt="Close modal" />
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="modal-body">
+                    <!-- Recipe details-->
+                    <h2 class="text-uppercase">{{ page.title }}</h2>
+                    {% if page.subtitle %}
+                        <p class="item-intro text-muted">{{ page.subtitle }}</p>
+                    {% endif %}
+                    
+                    {% if page.images %}
+                        <img class="img-fluid d-block mx-auto" src="{{ page.images[0].path | relative_url }}" alt="{{ page.images[0].alt }}" />
+                    {% endif %}
+                    
+                    <div class="recipe-meta">
+                        {% if page.prep_time %}
+                            <p><strong>Prep Time:</strong> {{ page.prep_time }}</p>
+                        {% endif %}
+                        {% if page.cook_time %}
+                            <p><strong>Cook Time:</strong> {{ page.cook_time }}</p>
+                        {% endif %}
+                        {% if page.servings %}
+                            <p><strong>Servings:</strong> {{ page.servings }}</p>
+                        {% endif %}
+                    </div>
+
+                    {% if page.ingredients %}
+                        <h3>Ingredients</h3>
+                        <ul class="ingredients-list">
+                        {% for ingredient in page.ingredients %}
+                            <li>
+                                {% if ingredient.amount %}{{ ingredient.amount }}{% endif %}
+                                {% if ingredient.unit %}{{ ingredient.unit }}{% endif %}
+                                {{ ingredient.item }}
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% if page.instructions %}
+                        <h3>Instructions</h3>
+                        <ol class="instructions-list">
+                        {% for instruction in page.instructions %}
+                            <li>{{ instruction.step }}</li>
+                        {% endfor %}
+                        </ol>
+                    {% endif %}
+
+                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                        <i class="fas fa-xmark me-1"></i>
+                        Close Recipe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
