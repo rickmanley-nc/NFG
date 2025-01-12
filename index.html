@@ -57,11 +57,10 @@ layout: default
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#starters">Starters</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#mains">Mains</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#desserts">Desserts</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#cocktails">Cocktails</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#family">Family</a></li>
+                        {% assign categories = "starters,mains,desserts,cocktails,miscellaneous" | split: "," %}
+                        {% for category in categories %}
+                            <li class="nav-item"><a class="nav-link" href="#{{ category }}">{{ category | capitalize }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -77,7 +76,7 @@ layout: default
         </header>
 
         <!-- Recipe Grid-->
-        {% assign categories = "starters,mains,desserts,cocktails" | split: "," %}
+        {% assign categories = "starters,mains,desserts,cocktails,miscellaneous" | split: "," %}
         {% for category in categories %}
             <section class="page-section bg-dark bg-gradient" id="{{ category }}">
                 <div class="container">
@@ -93,6 +92,8 @@ layout: default
                                     Sweet Endings
                                 {% when 'cocktails' %}
                                     Sip & Savor
+                                {% when 'miscellaneous' %}
+                                    Miscellaneous
                             {% endcase %}
                         </h3>
                     </div>

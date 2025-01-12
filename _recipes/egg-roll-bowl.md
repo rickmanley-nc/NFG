@@ -7,7 +7,7 @@ prep_time: 15 minutes
 cook_time: 25 minutes
 servings: 4-6
 images:
-  - path: /assets/img/portfolio/Egg-Roll-in-a-Bowl-fixed.jpg
+  - path: assets/img/portfolio/Egg-Roll-in-a-Bowl-fixed.jpg
     alt: Egg Roll in a Bowl
 ingredients:
   - group: Main Ingredients

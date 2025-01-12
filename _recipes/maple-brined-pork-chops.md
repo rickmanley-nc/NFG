@@ -7,7 +7,7 @@ prep_time: 4 hours 15 minutes
 cook_time: 15 minutes
 servings: 4
 images:
-  - path: /assets/img/portfolio/maple-brined-pork-chops.jpg
+  - path: assets/img/portfolio/maple-brined-pork-chops.jpg
     alt: Maple Brined Pork Chops
 ingredients:
   - group: Brine

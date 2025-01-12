@@ -5,7 +5,7 @@ category: starters
 prep_time: 20 minutes
 servings: 6-8
 images:
-  - path: /assets/img/portfolio/greek-salad.jpeg
+  - path: assets/img/portfolio/greek-salad.jpeg
     alt: Greek Chopped Salad
 ingredients:
   - group: Salad
