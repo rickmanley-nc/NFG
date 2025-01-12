@@ -99,4 +99,10 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     }
 
+    document.querySelectorAll('.close').forEach(button => {
+        button.addEventListener('click', () => {
+            console.log('Close button clicked');
+        });
+    });
+
 });
