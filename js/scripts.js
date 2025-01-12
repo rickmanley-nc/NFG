@@ -76,6 +76,15 @@ window.addEventListener('DOMContentLoaded', event => {
             // Show the modal
             const bootstrapModal = new bootstrap.Modal(modal);
             bootstrapModal.show();
+
+            // Add event listeners for modal shown and hidden
+            $(modalId).on('shown.bs.modal', function () {
+                alert('Modal opened');
+            });
+
+            $(modalId).on('hidden.bs.modal', function () {
+                alert('Modal closed');
+            });
         });
     });
 
@@ -102,6 +111,18 @@ window.addEventListener('DOMContentLoaded', event => {
     document.querySelectorAll('.close').forEach(button => {
         button.addEventListener('click', () => {
             console.log('Close button clicked');
+        });
+    });
+
+    // Add event listeners to log when the modal is shown and hidden for debugging purposes
+    document.querySelectorAll('.portfolio-link').forEach(link => {
+        const modalId = link.getAttribute('href');
+        $(modalId).on('shown.bs.modal', function () {
+            alert('Modal opened');
+        });
+
+        $(modalId).on('hidden.bs.modal', function () {
+            alert('Modal closed');
         });
     });
 
