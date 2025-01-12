@@ -57,7 +57,7 @@ layout: default
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        {% assign categories = "starters,mains,desserts,cocktails,miscellaneous" | split: "," %}
+                        {% assign categories = "starters,mains,desserts,cocktails,miscellaneous,family" | split: "," %}
                         {% for category in categories %}
                             <li class="nav-item"><a class="nav-link" href="#{{ category }}">{{ category | capitalize }}</a></li>
                         {% endfor %}
@@ -76,7 +76,7 @@ layout: default
         </header>
 
         <!-- Recipe Grid-->
-        {% assign categories = "starters,mains,desserts,cocktails,miscellaneous" | split: "," %}
+        {% assign categories = "starters,mains,desserts,cocktails,miscellaneous,family" | split: "," %}
         {% for category in categories %}
             <section class="page-section bg-dark bg-gradient" id="{{ category }}">
                 <div class="container">
@@ -94,6 +94,8 @@ layout: default
                                     Sip & Savor
                                 {% when 'miscellaneous' %}
                                     Miscellaneous
+                                {% when 'family' %}
+                                    Our Family
                             {% endcase %}
                         </h3>
                     </div>
