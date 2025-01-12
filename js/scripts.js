@@ -64,18 +64,22 @@ window.addEventListener('DOMContentLoaded', event => {
             // Set the title of the modal
             modalTitle.textContent = this.querySelector('.portfolio-caption-heading').textContent;
 
-            // Fetch the recipe markdown file
+            // Fetch and render recipe markdown in the modal
             const recipeSlug = this.getAttribute('href').replace('#recipe-', '');
-            const response = await fetch(`recipes/${recipeSlug}.md`);
-            const markdownContent = await response.text();
-
-            // Render the recipe instructions using marked.js
-            modalBody.querySelector('#recipe-instructions-' + recipeSlug).innerHTML = marked(markdownContent);
+            await fetchAndRenderRecipe(recipeSlug);
 
             // Show the modal
             const bootstrapModal = new bootstrap.Modal(modal);
             bootstrapModal.show();
         });
     });
+
+    // Function to fetch and render recipe markdown in the modal
+    async function fetchAndRenderRecipe(slug) {
+        const response = await fetch(`recipes/${slug}.md`);
+        const markdownContent = await response.text();
+        const modalBody = document.querySelector(`#recipe-instructions-${slug}`);
+        modalBody.innerHTML = marked(markdownContent);
+    }
 
 });
