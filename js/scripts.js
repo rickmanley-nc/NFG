@@ -66,7 +66,12 @@ window.addEventListener('DOMContentLoaded', event => {
 
             // Fetch and render recipe markdown in the modal
             const recipeSlug = this.getAttribute('href').replace('#recipe-', '');
-            await fetchAndRenderRecipe(recipeSlug);
+            try {
+                await fetchAndRenderRecipe(recipeSlug);
+            } catch (error) {
+                console.error(error);
+                modalBody.innerHTML = '<p>Sorry, we could not load the recipe.</p>';
+            }
 
             // Show the modal
             const bootstrapModal = new bootstrap.Modal(modal);
@@ -76,28 +81,22 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Function to fetch and render recipe markdown in the modal
     async function fetchAndRenderRecipe(slug) {
-        const response = await fetch(`recipes/${slug}.md`);
-        const markdownContent = await response.text();
-        const modalBody = document.querySelector(`#recipe-instructions-${slug}`);
-
-        // Extract image and instructions from markdown
-        const recipeImage = `assets/img/portfolio/${slug}.jpg`; // Adjusted to use the slug for image
-        const recipeInstructions = marked(markdownContent);
-
-        // Set the image and instructions in the modal body
-        modalBody.innerHTML = `
-            <div class='modal-image'>
-                <img src='${recipeImage}' alt='Recipe Image' style='width: 100%; height: auto;' />
-            </div>
-            <h2>Ingredients:</h2>
-            <ul>
-                ${recipeInstructions.split('### Ingredients')[1].split('### Instructions')[0].trim().split('\n').map(ingredient => `<li>${ingredient.trim()}</li>`).join('')}
-            </ul>
-            <h2>Instructions:</h2>
-            <ol>
-                ${recipeInstructions.split('### Instructions')[1].trim().split('\n').map(instruction => `<li>${instruction.trim()}</li>`).join('')}
-            </ol>
-        `;
+        try {
+            const response = await fetch(`recipes/${slug}.md`);
+            if (!response.ok) throw new Error('Recipe not found');
+            const markdownContent = await response.text();
+            const modalBody = document.querySelector(`#recipe-instructions-${slug}`);
+            try {
+                modalBody.innerHTML = marked(markdownContent); // Convert markdown to HTML
+            } catch (error) {
+                console.error(error);
+                modalBody.innerHTML = '<p>Sorry, we could not render the recipe.</p>';
+            }
+        } catch (error) {
+            console.error(error);
+            const modalBody = document.querySelector(`#recipe-instructions-${slug}`);
+            modalBody.innerHTML = '<p>Sorry, we could not load the recipe.</p>';
+        }
     }
 
 });
