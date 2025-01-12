@@ -64,10 +64,8 @@ window.addEventListener('DOMContentLoaded', event => {
             // Set the title of the modal
             modalTitle.textContent = this.querySelector('.portfolio-caption-heading').textContent;
 
-            // Fetch and render recipe markdown in the modal
-            const recipeSlug = this.getAttribute('href').replace('#recipe-', '');
+            // Removed the fetchAndRenderRecipe function as it is redundant with the dynamic modal generation in index.html
             try {
-                await fetchAndRenderRecipe(recipeSlug);
             } catch (error) {
                 console.error(error);
                 modalBody.innerHTML = '<p>Sorry, we could not load the recipe.</p>';
@@ -87,26 +85,6 @@ window.addEventListener('DOMContentLoaded', event => {
             });
         });
     });
-
-    // Function to fetch and render recipe markdown in the modal
-    async function fetchAndRenderRecipe(slug) {
-        try {
-            const response = await fetch(`recipes/${slug}.md`);
-            if (!response.ok) throw new Error('Recipe not found');
-            const markdownContent = await response.text();
-            const modalBody = document.querySelector(`#recipe-instructions-${slug}`);
-            try {
-                modalBody.innerHTML = marked(markdownContent); // Convert markdown to HTML
-            } catch (error) {
-                console.error(error);
-                modalBody.innerHTML = '<p>Sorry, we could not render the recipe.</p>';
-            }
-        } catch (error) {
-            console.error(error);
-            const modalBody = document.querySelector(`#recipe-instructions-${slug}`);
-            modalBody.innerHTML = '<p>Sorry, we could not load the recipe.</p>';
-        }
-    }
 
     document.querySelectorAll('.close').forEach(button => {
         button.addEventListener('click', () => {

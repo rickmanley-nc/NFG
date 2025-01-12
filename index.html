@@ -150,7 +150,11 @@ layout: default
                             {% endfor %}
                         </ul>
                         <h5>Instructions:</h5>
-                        <div id="recipe-instructions-{{ recipe.slug | default: recipe.title | slugify }}"></div>
+                        <ol>
+                            {% for step in recipe.instructions %}
+                                <li>{{ step }}</li>
+                            {% endfor %}
+                        </ol>
                     </div>
                 </div>
             </div>
