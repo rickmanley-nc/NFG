@@ -81,26 +81,22 @@ window.addEventListener('DOMContentLoaded', event => {
         const modalBody = document.querySelector(`#recipe-instructions-${slug}`);
 
         // Extract image and instructions from markdown
-        const recipeImage = `{{ site.url }}{{ recipe.images[0].path }}`;
+        const recipeImage = `assets/img/portfolio/${slug}.jpg`; // Adjusted to use the slug for image
         const recipeInstructions = marked(markdownContent);
 
         // Set the image and instructions in the modal body
         modalBody.innerHTML = `
-            <div class="row">
-                <div class="col-md-6">
-                    <img src='${recipeImage}' alt='Recipe Image' />
-                </div>
-                <div class="col-md-6">
-                    <h2>Ingredients:</h2>
-                    <ul>
-                        ${recipeInstructions.split('### Ingredients')[1].split('### Instructions')[0].trim().split('\n').map(ingredient => `<li>${ingredient.trim()}</li>`).join('')}
-                    </ul>
-                    <h2>Instructions:</h2>
-                    <ol>
-                        ${recipeInstructions.split('### Instructions')[1].trim().split('\n').map(instruction => `<li>${instruction.trim()}</li>`).join('')}
-                    </ol>
-                </div>
+            <div class='modal-image'>
+                <img src='${recipeImage}' alt='Recipe Image' style='width: 100%; height: auto;' />
             </div>
+            <h2>Ingredients:</h2>
+            <ul>
+                ${recipeInstructions.split('### Ingredients')[1].split('### Instructions')[0].trim().split('\n').map(ingredient => `<li>${ingredient.trim()}</li>`).join('')}
+            </ul>
+            <h2>Instructions:</h2>
+            <ol>
+                ${recipeInstructions.split('### Instructions')[1].trim().split('\n').map(instruction => `<li>${instruction.trim()}</li>`).join('')}
+            </ol>
         `;
     }
 
