@@ -51,4 +51,24 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Function to open modals for recipe cards
+    const recipeLinks = document.querySelectorAll('.portfolio-link');
+    recipeLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            const modalId = this.getAttribute('href');
+            const modal = document.querySelector(modalId);
+            const modalTitle = modal.querySelector('.modal-title');
+            const modalBody = modal.querySelector('.modal-body');
+
+            // Set the title and content of the modal
+            modalTitle.textContent = this.querySelector('.portfolio-caption-heading').textContent;
+            modalBody.innerHTML = this.dataset.recipeContent; // Assuming you have the content stored in a data attribute
+
+            // Show the modal
+            const bootstrapModal = new bootstrap.Modal(modal);
+            bootstrapModal.show();
+        });
+    });
+
 });
