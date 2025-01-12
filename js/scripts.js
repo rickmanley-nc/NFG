@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // Function to open modals for recipe cards
     const recipeLinks = document.querySelectorAll('.portfolio-link');
     recipeLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
+        link.addEventListener('click', async function(event) {
             event.preventDefault(); // Prevent default anchor behavior
             const modalId = this.getAttribute('href');
             const modal = document.querySelector(modalId);
@@ -64,10 +64,13 @@ window.addEventListener('DOMContentLoaded', event => {
             // Set the title of the modal
             modalTitle.textContent = this.querySelector('.portfolio-caption-heading').textContent;
 
-            // Render the recipe instructions using marked.js
+            // Fetch recipe data
             const recipeSlug = this.getAttribute('href').replace('#recipe-', '');
-            const instructionsContent = this.dataset.recipeInstructions; // Assuming you have the instructions stored in a data attribute
-            modalBody.querySelector('#recipe-instructions-' + recipeSlug).innerHTML = marked(instructionsContent);
+            const response = await fetch(`load-recipe.php?slug=${recipeSlug}`);
+            const recipeData = await response.json();
+
+            // Render the recipe instructions using marked.js
+            modalBody.querySelector('#recipe-instructions-' + recipeSlug).innerHTML = marked(recipeData.instructions);
 
             // Show the modal
             const bootstrapModal = new bootstrap.Modal(modal);
