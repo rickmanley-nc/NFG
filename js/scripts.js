@@ -79,7 +79,29 @@ window.addEventListener('DOMContentLoaded', event => {
         const response = await fetch(`recipes/${slug}.md`);
         const markdownContent = await response.text();
         const modalBody = document.querySelector(`#recipe-instructions-${slug}`);
-        modalBody.innerHTML = marked(markdownContent);
+
+        // Extract image and instructions from markdown
+        const recipeImage = `{{ site.url }}{{ recipe.images[0].path }}`;
+        const recipeInstructions = marked(markdownContent);
+
+        // Set the image and instructions in the modal body
+        modalBody.innerHTML = `
+            <div class="row">
+                <div class="col-md-6">
+                    <img src='${recipeImage}' alt='Recipe Image' />
+                </div>
+                <div class="col-md-6">
+                    <h2>Ingredients:</h2>
+                    <ul>
+                        ${recipeInstructions.split('### Ingredients')[1].split('### Instructions')[0].trim().split('\n').map(ingredient => `<li>${ingredient.trim()}</li>`).join('')}
+                    </ul>
+                    <h2>Instructions:</h2>
+                    <ol>
+                        ${recipeInstructions.split('### Instructions')[1].trim().split('\n').map(instruction => `<li>${instruction.trim()}</li>`).join('')}
+                    </ol>
+                </div>
+            </div>
+        `;
     }
 
 });
