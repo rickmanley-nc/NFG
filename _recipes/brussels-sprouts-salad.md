@@ -6,7 +6,7 @@ prep_time: 20 minutes
 cook_time: 15 minutes
 servings: 4-6
 images:
-  - path: assets/img/portfolio/brussels-sprout-salad-creamy-shallot.jpeg
+  - path: /assets/img/portfolio/brussels-sprout-salad-creamy-shallot.jpeg
     alt: Chopped Brussels Sprouts Salad with Creamy Shallot Dressing
 ingredients:
   - group: Salad

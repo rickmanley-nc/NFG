@@ -64,13 +64,13 @@ window.addEventListener('DOMContentLoaded', event => {
             // Set the title of the modal
             modalTitle.textContent = this.querySelector('.portfolio-caption-heading').textContent;
 
-            // Fetch recipe data
+            // Fetch the recipe markdown file
             const recipeSlug = this.getAttribute('href').replace('#recipe-', '');
-            const response = await fetch(`load-recipe.php?slug=${recipeSlug}`);
-            const recipeData = await response.json();
+            const response = await fetch(`recipes/${recipeSlug}.md`);
+            const markdownContent = await response.text();
 
             // Render the recipe instructions using marked.js
-            modalBody.querySelector('#recipe-instructions-' + recipeSlug).innerHTML = marked(recipeData.instructions);
+            modalBody.querySelector('#recipe-instructions-' + recipeSlug).innerHTML = marked(markdownContent);
 
             // Show the modal
             const bootstrapModal = new bootstrap.Modal(modal);
