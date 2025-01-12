@@ -7,7 +7,7 @@ prep_time: 20 minutes
 cook_time: 25 minutes
 servings: 6-8
 images:
-  - path: /assets/img/portfolio/butternut-squash-turkey-chili.jpg
+  - path: assets/img/portfolio/butternut-squash-turkey-chili.jpg
     alt: Butternut Squash and Turkey Chili
 ingredients:
   - group: Main Ingredients

@@ -7,7 +7,7 @@ prep_time: 20 minutes
 cook_time: 30 minutes
 servings: 6-8
 images:
-  - path: /assets/img/portfolio/chicken-tortilla.jpeg
+  - path: assets/img/portfolio/chicken-tortilla.jpeg
     alt: Chicken Tortilla Soup
 ingredients:
   - group: Soup

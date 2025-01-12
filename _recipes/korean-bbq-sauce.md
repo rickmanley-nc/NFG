@@ -8,7 +8,7 @@ cook_time: 5 minutes
 servings: About 1 cup
 spice_level: Medium-Hot
 images:
-  - path: /assets/img/portfolio/placeholder-korean-bbq.jpg
+  - path: assets/img/portfolio/korean-bbq-sauce.jpg
     alt: Korean BBQ Sauce
     note: Placeholder - Add image of Korean BBQ sauce
 ingredients:

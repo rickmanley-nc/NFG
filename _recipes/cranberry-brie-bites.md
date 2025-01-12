@@ -7,7 +7,7 @@ prep_time: 15 minutes
 cook_time: 15 minutes
 servings: 24 bites
 images:
-  - path: /assets/img/portfolio/cranberry-brie-bites-fixed.jpg
+  - path: assets/img/portfolio/cranberry-brie-bites-fixed.jpg
     alt: Cranberry Brie Bites appetizer
 ingredients:
   - item: Cooking spray

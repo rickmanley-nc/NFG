@@ -6,7 +6,7 @@ category: cocktails
 prep_time: 5 minutes
 servings: 1
 images:
-  - path: /assets/img/portfolio/sunrise.jpeg
+  - path: assets/img/portfolio/sunrise.jpeg
     alt: Sunrise Cocktail
 ingredients:
   - group: Main Ingredients

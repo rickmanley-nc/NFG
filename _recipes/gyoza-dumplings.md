@@ -7,7 +7,7 @@ prep_time: 45 minutes
 cook_time: 20 minutes
 servings: 50 dumplings
 images:
-  - path: /assets/img/portfolio/gyoza.jpeg
+  - path: assets/img/portfolio/gyoza.jpeg
     alt: Gyoza Dumplings
 ingredients:
   - group: Wrapper & Cooking

@@ -6,7 +6,7 @@ category: starters
 prep_time: 5 minutes
 servings: 4-6
 images:
-  - path: /assets/img/portfolio/sesame-ginger-salad-dressing.jpeg
+  - path: assets/img/portfolio/sesame-ginger-salad-dressing.jpeg
     alt: Sesame Ginger Salad Dressing
 ingredients:
   - item: sesame oil

@@ -6,7 +6,7 @@ category: cocktails
 prep_time: 5 minutes
 servings: 1
 images:
-  - path: /assets/img/portfolio/goldrush.jpg
+  - path: assets/img/portfolio/goldrush.jpg
     alt: Gold Rush Cocktail
 ingredients:
   - group: Honey Syrup
