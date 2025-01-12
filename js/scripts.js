@@ -61,9 +61,13 @@ window.addEventListener('DOMContentLoaded', event => {
             const modalTitle = modal.querySelector('.modal-title');
             const modalBody = modal.querySelector('.modal-body');
 
-            // Set the title and content of the modal
+            // Set the title of the modal
             modalTitle.textContent = this.querySelector('.portfolio-caption-heading').textContent;
-            modalBody.innerHTML = this.dataset.recipeContent; // Assuming you have the content stored in a data attribute
+
+            // Render the recipe instructions using marked.js
+            const recipeSlug = this.getAttribute('href').replace('#recipe-', '');
+            const instructionsContent = this.dataset.recipeInstructions; // Assuming you have the instructions stored in a data attribute
+            modalBody.querySelector('#recipe-instructions-' + recipeSlug).innerHTML = marked(instructionsContent);
 
             // Show the modal
             const bootstrapModal = new bootstrap.Modal(modal);

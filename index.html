@@ -177,7 +177,7 @@ layout: default
                             {% endfor %}
                         </ul>
                         <h5>Instructions:</h5>
-                        <p>{{ recipe.instructions }}</p>
+                        <div id="recipe-instructions-{{ recipe.slug | default: recipe.title | slugify }}"></div>
                     </div>
                 </div>
             </div>
