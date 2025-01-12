@@ -158,6 +158,32 @@ layout: default
             </div>
         </section>
 
+        {% for recipe in site.recipes %}
+        <div class="modal fade" id="recipe-{{ recipe.slug | default: recipe.title | slugify }}" tabindex="-1" role="dialog" aria-labelledby="recipeModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="recipeModalLabel">{{ recipe.title }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{ recipe.images[0].path | relative_url }}" alt="{{ recipe.images[0].alt }}" class="img-fluid" />
+                        <h5>Ingredients:</h5>
+                        <ul>
+                            {% for ingredient in recipe.ingredients %}
+                                <li>{{ ingredient }}</li>
+                            {% endfor %}
+                        </ul>
+                        <h5>Instructions:</h5>
+                        <p>{{ recipe.instructions }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
         <!-- Include w3-include-html -->
         <script>includeHTML();</script> 
         <!-- Bootstrap core JS-->
