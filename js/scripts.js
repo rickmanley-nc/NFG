@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-    // Function to open modals for recipe cards
+    // Simplified modal functionality for recipe cards
     const recipeLinks = document.querySelectorAll('.portfolio-link');
     recipeLinks.forEach(link => {
         link.addEventListener('click', async function(event) {
@@ -64,25 +64,9 @@ window.addEventListener('DOMContentLoaded', event => {
             // Set the title of the modal
             modalTitle.textContent = this.querySelector('.portfolio-caption-heading').textContent;
 
-            // Removed the fetchAndRenderRecipe function as it is redundant with the dynamic modal generation in index.html
-            try {
-            } catch (error) {
-                console.error(error);
-                modalBody.innerHTML = '<p>Sorry, we could not load the recipe.</p>';
-            }
-
             // Show the modal
             const bootstrapModal = new bootstrap.Modal(modal);
             bootstrapModal.show();
-
-            // Add event listeners for modal shown and hidden
-            $(modalId).on('shown.bs.modal', function () {
-                alert('Modal opened');
-            });
-
-            $(modalId).on('hidden.bs.modal', function () {
-                alert('Modal closed');
-            });
         });
     });
 
@@ -96,11 +80,9 @@ window.addEventListener('DOMContentLoaded', event => {
     document.querySelectorAll('.portfolio-link').forEach(link => {
         const modalId = link.getAttribute('href');
         $(modalId).on('shown.bs.modal', function () {
-            alert('Modal opened');
         });
 
         $(modalId).on('hidden.bs.modal', function () {
-            alert('Modal closed');
         });
     });
 
