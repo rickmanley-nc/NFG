@@ -144,17 +144,41 @@ layout: default
                     <div class="modal-body">
                         <img src="{{ recipe.images[0].path | relative_url }}" alt="{{ recipe.images[0].alt }}" class="img-fluid" />
                         <h5>Ingredients:</h5>
-                        <ul>
+                        {% assign first_ingredient = recipe.ingredients | first %}
+                        {% if first_ingredient.group %}
+                            {% for ingredient_group in recipe.ingredients %}
+                                <strong>{{ ingredient_group.group }}</strong>
+                                <ul>
+                                {% for item in ingredient_group.items %}
+                                    <li>{{ item.amount }}{% if item.unit %} {{ item.unit }}{% endif %} {{ item.item }}{% if item.note %} — {{ item.note }}{% endif %}</li>
+                                {% endfor %}
+                                </ul>
+                            {% endfor %}
+                        {% else %}
+                            <ul>
                             {% for ingredient in recipe.ingredients %}
-                                <li>{{ ingredient }}</li>
+                                <li>{{ ingredient.amount }}{% if ingredient.unit %} {{ ingredient.unit }}{% endif %} {{ ingredient.item }}{% if ingredient.note %} — {{ ingredient.note }}{% endif %}</li>
                             {% endfor %}
-                        </ul>
+                            </ul>
+                        {% endif %}
                         <h5>Instructions:</h5>
-                        <ol>
-                            {% for step in recipe.instructions %}
-                                <li>{{ step }}</li>
+                        {% assign first_instruction = recipe.instructions | first %}
+                        {% if first_instruction.group %}
+                            {% for instruction_group in recipe.instructions %}
+                                <strong>{{ instruction_group.group }}</strong>
+                                <ol>
+                                {% for step in instruction_group.steps %}
+                                    <li>{{ step.step }}</li>
+                                {% endfor %}
+                                </ol>
                             {% endfor %}
-                        </ol>
+                        {% else %}
+                            <ol>
+                            {% for step in recipe.instructions %}
+                                <li>{{ step.step }}</li>
+                            {% endfor %}
+                            </ol>
+                        {% endif %}
                     </div>
                 </div>
             </div>
