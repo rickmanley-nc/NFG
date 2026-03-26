@@ -1,3 +1,6 @@
+---
+layout: default
+---
 <div class="modal-content">
     <div class="close-modal" data-bs-dismiss="modal">
         <img src="{{ '/assets/img/close-icon.svg' | relative_url }}" alt="Close modal" />
@@ -11,11 +14,11 @@
                     {% if page.subtitle %}
                         <p class="item-intro text-muted">{{ page.subtitle }}</p>
                     {% endif %}
-                    
+
                     {% if page.images %}
                         <img class="img-fluid d-block mx-auto" src="{{ page.images[0].path | relative_url }}" alt="{{ page.images[0].alt }}" />
                     {% endif %}
-                    
+
                     <div class="recipe-meta">
                         {% if page.prep_time %}
                             <p><strong>Prep Time:</strong> {{ page.prep_time }}</p>
@@ -30,15 +33,27 @@
 
                     {% if page.ingredients %}
                         <h3>Ingredients</h3>
-                        <ul class="ingredients-list">
-                        {% for ingredient in page.ingredients %}
-                            <li>
-                                {% if ingredient.amount %}{{ ingredient.amount }}{% endif %}
-                                {% if ingredient.unit %}{{ ingredient.unit }}{% endif %}
-                                {{ ingredient.item }}
-                            </li>
-                        {% endfor %}
-                        </ul>
+                        {% assign first_ingredient = page.ingredients | first %}
+                        {% if first_ingredient.group %}
+                            {% for ingredient_group in page.ingredients %}
+                                <h5>{{ ingredient_group.group }}</h5>
+                                <ul class="ingredients-list">
+                                {% for item in ingredient_group.items %}
+                                    <li>{{ item.amount }}{% if item.unit %} {{ item.unit }}{% endif %} {{ item.item }}{% if item.note %} — {{ item.note }}{% endif %}</li>
+                                {% endfor %}
+                                </ul>
+                            {% endfor %}
+                        {% else %}
+                            <ul class="ingredients-list">
+                            {% for ingredient in page.ingredients %}
+                                <li>
+                                    {% if ingredient.amount %}{{ ingredient.amount }}{% endif %}
+                                    {% if ingredient.unit %}{{ ingredient.unit }}{% endif %}
+                                    {{ ingredient.item }}
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
                     {% endif %}
 
                     {% if page.instructions %}
