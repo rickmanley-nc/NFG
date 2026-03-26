@@ -12,7 +12,7 @@ layout: default
         </header>
 
         <!-- Recipe Grid-->
-        {% assign categories = "starters,mains,desserts,cocktails,miscellaneous,family" | split: "," %}
+        {% assign categories = "starters,mains,desserts,cocktails,miscellaneous" | split: "," %}
         {% for category in categories %}
             <section class="page-section bg-dark bg-gradient" id="{{ category }}">
                 <div class="container">
@@ -30,8 +30,6 @@ layout: default
                                     Sip & Savor
                                 {% when 'miscellaneous' %}
                                     Miscellaneous
-                                {% when 'family' %}
-                                    The Family
                             {% endcase %}
                         </h3>
                     </div>
