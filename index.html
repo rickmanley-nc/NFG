@@ -93,15 +93,17 @@ layout: default
         </section>
 
         {% for recipe in site.recipes %}
-        <div class="modal fade" id="recipe-{{ recipe.slug | default: recipe.title | slugify }}" tabindex="-1" role="dialog" aria-labelledby="recipeModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+        <div class="modal fade" id="recipe-{{ recipe.slug | default: recipe.title | slugify }}" tabindex="-1" aria-labelledby="recipeLabel-{{ recipe.slug | default: recipe.title | slugify }}" aria-hidden="true">
+            <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="recipeModalLabel">{{ recipe.title }}</h5>
+                        <h5 class="modal-title" id="recipeLabel-{{ recipe.slug | default: recipe.title | slugify }}">{{ recipe.title }}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                        {% if recipe.images %}
                         <img src="{{ recipe.images[0].path | relative_url }}" alt="{{ recipe.images[0].alt }}" class="img-fluid" />
+                        {% endif %}
                         <h5>Ingredients:</h5>
                         {% assign first_ingredient = recipe.ingredients | first %}
                         {% if first_ingredient.group %}
