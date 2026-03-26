@@ -5,8 +5,16 @@
             <img src="{{ '/assets/img/bear-removebg.png' | relative_url }}" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
+            Explore
             <i class="fas fa-bars ms-1"></i>
         </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                {% assign categories = "starters,mains,desserts,cocktails,miscellaneous,family" | split: "," %}
+                {% for category in categories %}
+                    <li class="nav-item"><a class="nav-link" href="#{{ category }}">{{ category | capitalize }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </nav>
