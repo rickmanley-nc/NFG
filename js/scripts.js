@@ -5,7 +5,7 @@
 */
 //
 // Scripts
-// 
+//
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     };
 
-    // Shrink the navbar 
+    // Shrink the navbar
     navbarShrink();
 
     // Shrink the navbar when page is scrolled
@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', event => {
     if (mainNav) {
         new bootstrap.ScrollSpy(document.body, {
             target: '#mainNav',
-            offset: 74,
+            rootMargin: '-74px 0px 0px 0px',
         });
     };
 
@@ -48,41 +48,6 @@ window.addEventListener('DOMContentLoaded', event => {
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
                 navbarToggler.click();
             }
-        });
-    });
-
-    // Simplified modal functionality for recipe cards
-    const recipeLinks = document.querySelectorAll('.portfolio-link');
-    recipeLinks.forEach(link => {
-        link.addEventListener('click', async function(event) {
-            event.preventDefault(); // Prevent default anchor behavior
-            const modalId = this.getAttribute('href');
-            const modal = document.querySelector(modalId);
-            const modalTitle = modal.querySelector('.modal-title');
-            const modalBody = modal.querySelector('.modal-body');
-
-            // Set the title of the modal
-            modalTitle.textContent = this.querySelector('.portfolio-caption-heading').textContent;
-
-            // Show the modal
-            const bootstrapModal = new bootstrap.Modal(modal);
-            bootstrapModal.show();
-        });
-    });
-
-    document.querySelectorAll('.close').forEach(button => {
-        button.addEventListener('click', () => {
-            console.log('Close button clicked');
-        });
-    });
-
-    // Add event listeners to log when the modal is shown and hidden for debugging purposes
-    document.querySelectorAll('.portfolio-link').forEach(link => {
-        const modalId = link.getAttribute('href');
-        $(modalId).on('shown.bs.modal', function () {
-        });
-
-        $(modalId).on('hidden.bs.modal', function () {
         });
     });
 
