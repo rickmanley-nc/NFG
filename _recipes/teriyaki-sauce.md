@@ -6,10 +6,6 @@ category: miscellaneous
 prep_time: 5 minutes
 cook_time: 10 minutes
 servings: About 1.5 cups
-images:
-  - path: assets/img/portfolio/teriyaki-sauce.jpg
-    alt: Teriyaki Sauce
-    note: Placeholder - Add image of teriyaki sauce
 ingredients:
   - group: Sauce Base
     items:

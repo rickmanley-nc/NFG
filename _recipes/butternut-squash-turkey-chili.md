@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: Butternut Squash and Turkey Chili
-subtitle: Category - Meal Prep
+subtitle: Hearty fall chili — great for meal prep
 category: mains
 prep_time: 20 minutes
 cook_time: 25 minutes

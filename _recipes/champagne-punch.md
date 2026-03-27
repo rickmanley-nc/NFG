@@ -5,10 +5,6 @@ subtitle: Champagne over Prosecco
 category: cocktails
 prep_time: 10 minutes
 servings: 1
-images:
-  - path: assets/img/portfolio/champagne-punch.jpg
-    alt: Champagne Punch
-    note: Placeholder - Add image of champagne punch cocktail
 ingredients:
   - group: Honey Syrup
     items:
