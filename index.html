@@ -12,7 +12,7 @@ layout: default
         </header>
 
         <!-- Recipe Grid-->
-        {% assign categories = "starters,mains,desserts,cocktails,miscellaneous" | split: "," %}
+        {% assign categories = "starters,mains,smoked,desserts,cocktails,miscellaneous" | split: "," %}
         {% for category in categories %}
             <section class="page-section bg-dark bg-gradient" id="{{ category }}">
                 <div class="container">
@@ -24,6 +24,8 @@ layout: default
                                     First Bites
                                 {% when 'mains' %}
                                     Main Event
+                                {% when 'smoked' %}
+                                    Low & Slow
                                 {% when 'desserts' %}
                                     Sweet Endings
                                 {% when 'cocktails' %}

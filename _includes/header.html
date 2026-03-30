@@ -10,7 +10,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                {% assign categories = "starters,mains,desserts,cocktails,miscellaneous,family" | split: "," %}
+                {% assign categories = "starters,mains,smoked,desserts,cocktails,miscellaneous,family" | split: "," %}
                 {% for category in categories %}
                     <li class="nav-item"><a class="nav-link" href="#{{ category }}">{{ category | capitalize }}</a></li>
                 {% endfor %}
