@@ -11457,6 +11457,11 @@ header.masthead .masthead-heading {
   margin-left: auto;
   margin-right: auto;
 }
+.portfolio-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
 .portfolio-item .portfolio-link {
   position: relative;
   display: block;
