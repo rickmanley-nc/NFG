@@ -1,6 +1,7 @@
 ---
 layout: recipe
 title: Meringue Cookies
+subtitle: Light, crispy, and melt-in-your-mouth sweet
 category: desserts
 prep_time: 20 minutes
 cook_time: 1 hour

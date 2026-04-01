@@ -1,6 +1,7 @@
 ---
 layout: recipe
 title: Greek Chopped Salad
+subtitle: Fresh, bright, and loaded with Mediterranean flavor
 category: starters
 prep_time: 20 minutes
 servings: 6-8

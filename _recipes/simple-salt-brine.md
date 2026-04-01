@@ -1,6 +1,7 @@
 ---
 layout: recipe
 title: Simple Salt Brine
+subtitle: The secret to juicy chicken wings every time
 category: miscellaneous
 prep_time: 5 minutes
 brine_time: 2-3 hours
