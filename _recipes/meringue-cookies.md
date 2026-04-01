@@ -7,6 +7,9 @@ prep_time: 20 minutes
 cook_time: 1 hour
 cooling_time: 1-2 hours
 servings: 24 cookies
+images:
+  - path: assets/img/portfolio/meringue-cookies.jpg
+    alt: Meringue Cookies
 ingredients:
   - group: Main Ingredients
     items:
