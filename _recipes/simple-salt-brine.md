@@ -6,6 +6,9 @@ category: miscellaneous
 prep_time: 5 minutes
 brine_time: 2-3 hours
 servings: Enough for 2-3 pounds of chicken wings
+images:
+  - path: assets/img/portfolio/simple-salt-brine.jpg
+    alt: Simple Salt Brine for chicken wings
 ingredients:
   - group: Brine Base
     items:
