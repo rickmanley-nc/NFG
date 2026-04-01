@@ -1,6 +1,7 @@
 ---
 layout: recipe
 title: Chopped Brussels Sprouts Salad with Creamy Shallot Dressing
+subtitle: Crispy bacon, pomegranate, and creamy shallot dressing
 category: starters
 prep_time: 20 minutes
 cook_time: 15 minutes
