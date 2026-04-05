@@ -11476,6 +11476,10 @@ header.masthead .masthead-heading {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
+  min-height: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .portfolio-item .portfolio-caption .portfolio-caption-heading {
   font-size: 1.25rem;
