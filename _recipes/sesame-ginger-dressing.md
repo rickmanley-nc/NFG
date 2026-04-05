@@ -2,7 +2,7 @@
 layout: recipe
 title: Sesame Ginger Salad Dressing
 subtitle: Mix all ingredients. BAM!
-category: starters
+category: miscellaneous
 prep_time: 5 minutes
 servings: 4-6
 images:
