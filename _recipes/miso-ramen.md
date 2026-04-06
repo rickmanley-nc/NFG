@@ -77,19 +77,19 @@ ingredients:
 instructions:
   - group: Build the Miso Broth
     steps:
-      - "[PLACEHOLDER] Heat sesame oil in a large pot over medium heat, then sauté garlic and ginger for 1 to 2 minutes until fragrant."
-      - "[PLACEHOLDER] Add dashi stock and bring to a gentle simmer for about 5 minutes to infuse aromatics."
-      - "[PLACEHOLDER] In a bowl, whisk white miso paste and red miso paste with a ladle of hot broth until smooth."
-      - "[PLACEHOLDER] Return dissolved miso mixture to the pot, then stir in soy sauce and mirin. Keep broth at a low simmer and do not boil hard."
+      - step: "[PLACEHOLDER] Heat sesame oil in a large pot over medium heat, then sauté garlic and ginger for 1 to 2 minutes until fragrant."
+      - step: "[PLACEHOLDER] Add dashi stock and bring to a gentle simmer for about 5 minutes to infuse aromatics."
+      - step: "[PLACEHOLDER] In a bowl, whisk white miso paste and red miso paste with a ladle of hot broth until smooth."
+      - step: "[PLACEHOLDER] Return dissolved miso mixture to the pot, then stir in soy sauce and mirin. Keep broth at a low simmer and do not boil hard."
   - group: Prepare Noodles and Eggs
     steps:
-      - "[PLACEHOLDER] Bring a separate pot of water to a boil and cook ramen noodles according to package directions until just tender."
-      - "[PLACEHOLDER] Drain noodles and rinse briefly with warm water to stop carryover cooking, then portion into serving bowls."
-      - "[PLACEHOLDER] If needed, warm sliced chashu pork in a skillet or in a little hot broth so it is ready for plating."
+      - step: "[PLACEHOLDER] Bring a separate pot of water to a boil and cook ramen noodles according to package directions until just tender."
+      - step: "[PLACEHOLDER] Drain noodles and rinse briefly with warm water to stop carryover cooking, then portion into serving bowls."
+      - step: "[PLACEHOLDER] If needed, warm sliced chashu pork in a skillet or in a little hot broth so it is ready for plating."
   - group: Assemble Each Bowl
     steps:
-      - "[PLACEHOLDER] Ladle hot miso broth over noodles in each bowl, ensuring noodles are fully submerged."
-      - "[PLACEHOLDER] Top each bowl with chashu pork, soft-boiled egg halves, bamboo shoots, corn, green onions, and nori strips."
-      - "[PLACEHOLDER] Finish with toasted sesame seeds and a small drizzle of chili oil if desired, then serve immediately."
+      - step: "[PLACEHOLDER] Ladle hot miso broth over noodles in each bowl, ensuring noodles are fully submerged."
+      - step: "[PLACEHOLDER] Top each bowl with chashu pork, soft-boiled egg halves, bamboo shoots, corn, green onions, and nori strips."
+      - step: "[PLACEHOLDER] Finish with toasted sesame seeds and a small drizzle of chili oil if desired, then serve immediately."
 notes: "[PLACEHOLDER] For deeper flavor, refrigerate broth overnight and reheat gently before serving. Adjust miso quantity to taste and sodium preference."
 ---
