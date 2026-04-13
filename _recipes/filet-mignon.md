@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: Filet Mignon
-subtitle: Category - Special Occasion
+subtitle: Pan-seared and butter-basted to perfection
 category: mains
 prep_time: 30 minutes
 cook_time: 20 minutes

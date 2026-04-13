@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: Maple Brined Pork Chops
-subtitle: Category - Meal Prep
+subtitle: Sweet maple brine meets the Big Green Egg
 category: mains
 prep_time: 4 hours 15 minutes
 cook_time: 15 minutes
