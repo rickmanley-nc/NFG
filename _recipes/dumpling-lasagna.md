@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: Dumpling Lasagna
-subtitle: Category - Fusion Comfort Food
+subtitle: Chinese-Italian fusion with wonton wrappers and savory pork
 category: mains
 prep_time: 45 minutes
 cook_time: 45 minutes

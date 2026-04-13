@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: Egg Roll in a Bowl
-subtitle: Category - Meal Prep
+subtitle: Deconstructed egg roll — quick, low-carb, and meal-prep ready
 category: mains
 prep_time: 15 minutes
 cook_time: 25 minutes
