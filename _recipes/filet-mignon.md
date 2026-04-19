@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: Filet Mignon
-subtitle: Pan-seared and butter-basted to perfection
+subtitle: Grilled Filet Mignon on the Big Green Egg 
 category: mains
 prep_time: 30 minutes
 cook_time: 20 minutes
@@ -15,58 +15,65 @@ ingredients:
       - item: filet mignon steaks
         amount: 2
         unit: steaks
-        note: 8 oz each, 1.5-2 inches thick
-      - item: kosher salt
+        note: 8-12 oz each, 1.5-2 inches thick
+      - item: coarse kosher salt
         amount: 1
         unit: tablespoon
       - item: coarse black pepper
         amount: 1
-        unit: teaspoon
+        unit: tablespoon
       - item: olive oil
         amount: 1
         unit: tablespoon
-  - group: Butter Baste
+  - group: Steak Butter
     items:
-      - item: unsalted butter
-        amount: 3
-        unit: tablespoons
-      - item: fresh thyme
-        amount: 4
-        unit: sprigs
-      - item: fresh rosemary
-        amount: 2
-        unit: sprigs
-      - item: garlic
-        amount: 3
-        unit: cloves
-        note: smashed
-  - group: Garnish
-    items:
-      - item: flaky sea salt
-        note: such as Maldon, for finishing
-      - item: fresh cracked pepper
-        note: for finishing
+      - item: butter
+        ammount: 2
+        unit: stick
+        note: room temperature
+      - item: rosemerry
+        amount: 1
+        unit: teaspoon
+      - item: thyme
+        amount: 1
+        unit: teaspoon
+      - item: sage
+        amount: 1
+        unit: teaspoon
+      - item: shallot
+        amount: 1
+        unit: tablespoon
+      - item: salt
+        amount: 1
+        unit: teaspoon
+      - item: pepper
+        amount: 1
+        unit: teaspoon
+      - item: roasted garlic
+        amount: 1
+        unit: bulb
+        note: cut top off and roast in oven at 350 degrees for 1 hour
 instructions:
-  - group: Preparation
+  - group: Compound Butter
     steps:
-      - step: "[PLACEHOLDER] Remove the filet mignon steaks from the refrigerator 30-45 minutes before cooking to bring them to room temperature"
-      - step: "[PLACEHOLDER] Pat the steaks completely dry with paper towels — this is critical for a good sear"
-      - step: "[PLACEHOLDER] Season generously on all sides with kosher salt and coarse black pepper"
-  - group: Searing
+      - step: "Combine 2 room temperature sticks of butter to a bowl and mix in rosemerry, thyme, sage, shallot, 4 cloves of the roasted garlic, salt, and pepper"
+      - step: "Once thorougly mixed, cover with saran wrap and place in refrigerator for 2 hours"
+  - group: Steak Preparation
     steps:
-      - step: "[PLACEHOLDER] Heat a cast iron skillet over high heat until it just begins to smoke, about 3-4 minutes"
-      - step: "[PLACEHOLDER] Add olive oil to the pan, then carefully place steaks in the skillet — do not move them"
-      - step: "[PLACEHOLDER] Sear undisturbed for 3-4 minutes until a deep brown crust forms"
-      - step: "[PLACEHOLDER] Flip the steaks and sear the other side for 3-4 minutes"
-  - group: Butter Baste and Finish
+      - step: "Remove the filet mignon steaks from the refrigerator 30-45 minutes before cooking to bring them to room temperature"
+      - step: "Rub olive oil around all sides of steaks"
+      - step: "Season all sides of the steaks with coarse salt and coarse black pepper"
+      - step: "Let rest for 20-30 minutes"
+  - group: Big Green Egg
     steps:
-      - step: "[PLACEHOLDER] Reduce heat to medium, add butter, thyme, rosemary, and smashed garlic to the pan"
-      - step: "[PLACEHOLDER] Once butter is melted and foaming, tilt the pan slightly and spoon the butter over the steaks continuously for 1-2 minutes"
-      - step: "[PLACEHOLDER] For medium-rare, pull the steaks when the Thermapen reads 130°F — they will carry over to 135°F while resting"
-      - step: "[PLACEHOLDER] Transfer steaks to a cutting board and rest for 5-8 minutes — do not skip this step"
-      - step: "[PLACEHOLDER] Finish with flaky sea salt and fresh cracked pepper before serving"
-notes: "[PLACEHOLDER] Ricky will add personal notes here. The key to a perfect filet mignon is starting with a dry surface for the sear, using high heat, and not overcrowding the pan. A cast iron skillet is essential — stainless steel works in a pinch but won't hold heat as well. Always use an instant-read thermometer rather than cutting into the steak."
-equipment:
-  - Cast iron skillet
-  - Thermapen
+      - step: "Keep bottom vent wide open, we're taking this to 650-700 degrees. Adjust the top vent as needed
+      - step: "Once the temp is stable, burp the lid before opening completely"
+      - step: "Place the steaks on the center of the grid, and close the lid"
+      - step: "TIMER: After 1 minute, twist quarter turn and close the lid"
+      - step: "TIMER: After 1 minute, flip and close the lid"
+      - step: "TIMER: After 1 minute, twist quarter turn and close the lid"
+      - step: "TIMER: After 1 minute, close the bottom vent and cap the top vent"
+      - step: "TIMER: After 2 minutes 30 seconds, place dollup of compound butter on each steak"
+      - step: "TIMER: After 1 minute, remove from grill"
+      - step: "Let rest for 10 minutes, and enjoy!"
 ---
