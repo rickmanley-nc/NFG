@@ -66,7 +66,7 @@ instructions:
       - step: "Let rest for 20-30 minutes"
   - group: Big Green Egg
     steps:
-      - step: "Keep bottom vent wide open, we're taking this to 650-700 degrees. Adjust the top vent as needed
+      - step: "Keep bottom vent wide open, we're taking this to 650-700 degrees. Adjust the top vent as needed"
       - step: "Once the temp is stable, burp the lid before opening completely"
       - step: "Place the steaks on the center of the grid, and close the lid"
       - step: "TIMER: After 1 minute, twist quarter turn and close the lid"
