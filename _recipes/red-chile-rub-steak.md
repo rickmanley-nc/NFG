@@ -55,23 +55,31 @@ ingredients:
       - item: flaky sea salt
         note: for finishing
 instructions:
+  - group: Chile Rub
+    steps:
+      - step: Toast the cumin seed, coriander seed, and red chile flakes in a small skillet over medium heat for about 5 minutes, or until fragrant.
+      - step: Remove from the heat and allow to cool completely.
+      - step: Transfer the toasted spices to a spice grinder.
+      - step: Add the ancho chile powder, kosher salt, sweet paprika, and garlic powder.
+      - step: Grind for 15 to 20 seconds until a fine powder forms.
+      - step: Transfer to an airtight container until ready to use. Makes approximately ½ cup.
   - group: Preparation
     steps:
-      - step: "[PLACEHOLDER] Remove steaks from the refrigerator 30 minutes before cooking to bring them to room temperature"
-      - step: "[PLACEHOLDER] Combine all red chile rub ingredients in a small bowl and mix well"
-      - step: "[PLACEHOLDER] Pat steaks dry with paper towels, then coat each side generously with the chile rub, pressing it in firmly"
-      - step: "[PLACEHOLDER] Season lightly with kosher salt over the rub, then drizzle with olive oil"
+      - step: Remove steaks from the refrigerator 30 minutes before cooking to bring them to room temperature.
+      - step: Prepare the Red Chile Rub (see Chile Rub group above) and set aside.
+      - step: Pat steaks dry with paper towels, then coat each side generously with the chile rub, pressing it in firmly.
+      - step: Season lightly with kosher salt over the rub, then drizzle with olive oil.
   - group: Searing
     steps:
-      - step: "[PLACEHOLDER] Heat a cast iron skillet or grill over high heat until it just begins to smoke"
-      - step: "[PLACEHOLDER] Add the steaks and sear undisturbed for 3–4 minutes until a deep crust forms"
-      - step: "[PLACEHOLDER] Flip and sear the other side for 3–4 minutes"
-      - step: "[PLACEHOLDER] For medium-rare, pull steaks at an internal temperature of 130°F — they will carry over to 135°F while resting"
+      - step: Heat a cast iron skillet or grill over high heat until it just begins to smoke.
+      - step: Add the steaks and sear undisturbed for 3–4 minutes until a deep crust forms.
+      - step: Flip and sear the other side for 3–4 minutes.
+      - step: For medium-rare, pull steaks at an internal temperature of 130°F — they will carry over to 135°F while resting.
   - group: Rest and Serve
     steps:
-      - step: "[PLACEHOLDER] Transfer steaks to a cutting board and rest for 5 minutes — do not skip this step"
-      - step: "[PLACEHOLDER] Finish with flaky sea salt and a squeeze of fresh lime before serving"
-notes: "[PLACEHOLDER] Ricky will add personal notes here. The red chile rub brings bold, smoky heat that pairs beautifully with the char from a high-heat sear. Ancho chile powder is key — it is fruity and mild compared to regular chili powder. Adjust the cayenne to your preferred heat level."
+      - step: Transfer steaks to a cutting board and rest for 5 minutes — do not skip this step.
+      - step: Finish with flaky sea salt and a squeeze of fresh lime before serving.
+notes: "Ancho chiles are the dried version of the poblano pepper — the sweetest of the dried chiles. Toasting the whole spices (cumin seed, coriander seed, chile flakes) before grinding is the key step that sets this rub apart. The ancho chile powder provides fruity, mild heat rather than the sharp bite of regular chili powder. The rub also works well on chicken and pork."
 equipment:
   - Cast iron skillet or grill
   - Thermapen
