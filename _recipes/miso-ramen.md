@@ -1,95 +1,106 @@
 ---
 layout: recipe
 title: Miso Ramen
-subtitle: Mains - Savory Japanese noodle soup with rich miso broth and classic toppings
+subtitle: A bold, spicy miso ramen with chili oil, corn, and shiitake mushrooms
 category: mains
-prep_time: 30 minutes
-cook_time: 45 minutes
+prep_time: 15 minutes
+cook_time: 30 minutes
 servings: 4 servings
+img: miso-ramen.jpg
 images:
   - path: assets/img/portfolio/miso-ramen.jpg
-    alt: Bowl of miso ramen with soft-boiled egg, chashu pork, nori, and green onions
+    alt: Spicy miso ramen bowl with chili oil, corn, shiitake mushrooms, soft-boiled egg, and scallions
 ingredients:
-  - group: Broth Base
+  - group: Spicy Miso Broth
     items:
-      - item: Dashi stock
-        amount: 8
-        unit: cups
-      - item: White miso paste
+      - item: Chicken broth
         amount: 6
+        unit: cups
+        note: or vegetable broth for vegan
+      - item: White miso paste
+        amount: 5
         unit: tbsp
-      - item: Red miso paste
+      - item: Hot chili oil
         amount: 2
         unit: tbsp
+        note: plus more for serving
       - item: Sesame oil
-        amount: 2
+        amount: 1
         unit: tbsp
       - item: Soy sauce
         amount: 2
         unit: tbsp
-      - item: Mirin
-        amount: 1
-        unit: tbsp
       - item: Fresh ginger
-        amount: 1
+        amount: 2
         unit: tbsp
         note: finely grated
       - item: Garlic cloves
-        amount: 3
-        unit: 
+        amount: 4
+        unit:
         note: minced
+      - item: Shallots
+        amount: 3
+        unit:
+        note: thinly sliced
   - group: Noodles and Protein
     items:
       - item: Fresh ramen noodles
         amount: 4
         unit: portions
-      - item: Chashu pork
+      - item: Ground chicken
         amount: 12
         unit: oz
-        note: sliced and warmed
-      - item: Large eggs
-        amount: 4
-        unit: 
-        note: soft-boiled and halved
+        note: or ground pork; sub tofu or tempeh for vegan
+      - item: Shiitake mushrooms
+        amount: 8
+        unit: oz
+        note: stems removed, caps sliced
+      - item: Corn kernels
+        amount: 1
+        unit: cup
+        note: canned or fresh
   - group: Toppings
     items:
-      - item: Green onions
+      - item: Large eggs
         amount: 4
-        unit: 
+        unit:
+        note: soft-boiled and halved
+      - item: Scallions
+        amount: 4
+        unit:
         note: thinly sliced
-      - item: Nori sheets
-        amount: 2
-        unit: 
-        note: cut into strips
-      - item: Bamboo shoots
-        amount: 0.5
-        unit: cup
-      - item: Sweet corn kernels
-        amount: 0.5
-        unit: cup
-      - item: Toasted sesame seeds
-        amount: 2
-        unit: tsp
-      - item: Chili oil
+      - item: Bean sprouts
         amount: 1
-        unit: tsp
-        note: optional, for serving
+        unit: cup
+      - item: Crushed peanuts
+        amount: 3
+        unit: tbsp
+      - item: Extra hot chili oil
+        amount: 1
+        unit: tbsp
+        note: for serving
 instructions:
-  - group: Build the Miso Broth
+  - group: Build the Spicy Miso Broth
     steps:
-      - step: "[PLACEHOLDER] Heat sesame oil in a large pot over medium heat, then sauté garlic and ginger for 1 to 2 minutes until fragrant."
-      - step: "[PLACEHOLDER] Add dashi stock and bring to a gentle simmer for about 5 minutes to infuse aromatics."
-      - step: "[PLACEHOLDER] In a bowl, whisk white miso paste and red miso paste with a ladle of hot broth until smooth."
-      - step: "[PLACEHOLDER] Return dissolved miso mixture to the pot, then stir in soy sauce and mirin. Keep broth at a low simmer and do not boil hard."
-  - group: Prepare Noodles and Eggs
+      - step: Heat sesame oil in a large pot or Dutch oven over medium heat. Add shallots and cook 3 to 4 minutes until softened and translucent.
+      - step: Add minced garlic and grated ginger; cook 1 to 2 minutes until fragrant, stirring constantly.
+      - step: Stir in hot chili oil and cook another 30 seconds to bloom the spices.
+      - step: Pour in the chicken or vegetable broth and bring to a gentle simmer over medium heat, about 5 minutes.
+      - step: In a small bowl, whisk miso paste with a ladleful of hot broth until fully dissolved and smooth.
+      - step: Return the dissolved miso to the pot along with soy sauce. Reduce heat to low and keep broth at a bare simmer — do not boil hard or miso will lose its flavor.
+  - group: Cook the Protein and Vegetables
     steps:
-      - step: "[PLACEHOLDER] Bring a separate pot of water to a boil and cook ramen noodles according to package directions until just tender."
-      - step: "[PLACEHOLDER] Drain noodles and rinse briefly with warm water to stop carryover cooking, then portion into serving bowls."
-      - step: "[PLACEHOLDER] If needed, warm sliced chashu pork in a skillet or in a little hot broth so it is ready for plating."
+      - step: In a separate skillet over medium-high heat, cook ground chicken or pork, breaking it apart, until fully cooked through and lightly browned, about 6 to 8 minutes. Season with a pinch of salt and a splash of soy sauce. Remove and set aside.
+      - step: In the same skillet, sauté sliced shiitake mushrooms in a little sesame oil over medium-high heat until golden and tender, about 4 to 5 minutes. Season lightly with salt.
+      - step: Add corn kernels to the broth and let them warm through for 2 minutes.
+  - group: Cook the Noodles
+    steps:
+      - step: Bring a separate pot of water to a boil. Cook ramen noodles according to package directions until just tender.
+      - step: Drain noodles and rinse briefly with warm water to stop cooking. Divide evenly among four serving bowls.
   - group: Assemble Each Bowl
     steps:
-      - step: "[PLACEHOLDER] Ladle hot miso broth over noodles in each bowl, ensuring noodles are fully submerged."
-      - step: "[PLACEHOLDER] Top each bowl with chashu pork, soft-boiled egg halves, bamboo shoots, corn, green onions, and nori strips."
-      - step: "[PLACEHOLDER] Finish with toasted sesame seeds and a small drizzle of chili oil if desired, then serve immediately."
-notes: "[PLACEHOLDER] For deeper flavor, refrigerate broth overnight and reheat gently before serving. Adjust miso quantity to taste and sodium preference."
+      - step: Ladle hot spicy miso broth over the noodles in each bowl, ensuring the noodles are fully covered.
+      - step: Top each bowl with a portion of cooked ground chicken or pork, sautéed shiitake mushrooms, and soft-boiled egg halves.
+      - step: Finish with scallions, bean sprouts, crushed peanuts, and a generous drizzle of extra chili oil. Serve immediately.
+notes: "For extra depth, add a teaspoon of gochujang or doubanjiang to the broth. Adjust miso and chili oil amounts to your heat preference. To soft-boil eggs, simmer in boiling water for 6 to 7 minutes then transfer to an ice bath before peeling. Leftovers: store broth separately from noodles to prevent them from becoming soggy."
 ---
